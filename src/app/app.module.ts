@@ -11,6 +11,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { ProfileComponent } from './profile/profile.component';
 import { ScoreComponent } from './score/score.component';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ScoreComponent } from './score/score.component';
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production,
     }),
+    EffectsModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent]
