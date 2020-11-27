@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "ngrx-learning-app"
+  "defaultProject": "ngrx-learning-app",
+  "cli": {
+    "analytics": false
+  }
 }
