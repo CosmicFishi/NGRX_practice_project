@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ListPersonComponent } from './list-person/list-person.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { WeatherComponent } from './weather/weather.component';
 
 const routes: Routes = [
   {path: '', component:LoginComponent }, 
-  {path: 'profile', component: ProfileComponent}
+  {path: 'profile', component: ProfileComponent},
+  {path: 'weather', component: WeatherComponent}, 
+  {path: 'list', component: ListPersonComponent}
 ];
 
 @NgModule({

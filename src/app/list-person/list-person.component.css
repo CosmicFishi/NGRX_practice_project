@@ -1,0 +1,9 @@
+div { 
+    display: flex;
+    flex-wrap: wrap;
+}
+
+app-list-card { 
+    width: 25%;
+    height: 100px;
+}

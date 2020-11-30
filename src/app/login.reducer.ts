@@ -1,7 +1,8 @@
 import { createReducer, on, Action } from '@ngrx/store'
 import { login, logOut, setScore, increaseScore, decreaseScore } from './login.action'
+import { loadWeather,loadWeatherFailed,loadlWeatherSuccess } from './app.actions'
 
-//kế thừa interface 
+//Login reducer
 export const initState = { 
     username: "",
 }
@@ -19,6 +20,7 @@ export function reducer(state, action: Action) {
     return loginReducer(state,action)
 }
 
+//Score reducer
 export const initScore = { 
     home: 0,
     away: 0
@@ -29,8 +31,24 @@ const scoreReducer = createReducer(
     on(increaseScore, state => ({...state, away: state.away+1})), 
     on(decreaseScore, state => ({...state, home: state.home+1})), 
     on(setScore, state => ({home:0,away:0}))
-
 )
+
 export function ScoreReducer(state, action: Action) { 
     return scoreReducer(state, action)
+}
+
+//Weather reducer
+export const initWeather = {
+    payload: {},
+    msg: ''
+}
+
+const _weatherReducer = createReducer(
+    initWeather, 
+    on(loadlWeatherSuccess, (state, {payload}) => ({msg: 'load success', payload: payload})),
+    on(loadWeatherFailed, state => ({...state, msg: 'load failed'}))
+)
+
+export function weatherReducer(state, action: Action) { 
+    return _weatherReducer(state, action)
 }

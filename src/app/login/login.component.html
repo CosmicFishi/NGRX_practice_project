@@ -2,6 +2,8 @@
 <input type="button" value="Login" (click)="onClick(name.value)" />
 <input type="button" value="Logout" (click)="onClick('')" />
 <h1>{{ username.username }}</h1>
-<a [routerLink]='"\profile"'>nhan de chuyen link</a>
+<p><a [routerLink]='"\profile"'>nhan de chuyen link</a></p>
+<p><a [routerLink]='"\weather"'>Weather</a></p>
+<p><a [routerLink]='"\list"'>List</a></p>
 
 <app-score></app-score>

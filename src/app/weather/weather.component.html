@@ -1,0 +1,9 @@
+<div *ngIf="data.msg != ''">
+    <h1>{{data.payload.name}}</h1>
+    <h1>{{data.payload.weather[0].main}}</h1>
+    <h1>{{data.payload.weather[0].description}}</h1>
+    <h1>{{data.payload.main.temp}}</h1>
+</div>
+<div *ngIf="data.msg == 'load failed'">
+    <h1>{{data.msg}}</h1>
+</div>

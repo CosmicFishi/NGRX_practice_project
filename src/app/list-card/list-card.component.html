@@ -1,0 +1,4 @@
+<div [@popUp]="this.flag? 'in': 'out'" class="container-p" *ngIf="p">
+    <p>{{p.name}}</p>
+    <p [style.backgroundColor]=p.color>{{p.id}}</p>
+</div>

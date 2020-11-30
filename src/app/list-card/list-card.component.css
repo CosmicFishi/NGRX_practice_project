@@ -1,0 +1,14 @@
+.container-p { 
+    opacity: 0;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    /* background-color: white; */
+}
+p:nth-child(1) { 
+    color: white;
+    font-size: 20px;
+}
+p {
+    padding: 10px;
+}

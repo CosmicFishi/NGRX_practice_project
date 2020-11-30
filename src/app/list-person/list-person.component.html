@@ -1,0 +1,3 @@
+<div *ngIf="this.list.payload.length != 0">
+    <app-list-card *ngFor="let p of list.payload" [p]="p" ></app-list-card>
+</div>
