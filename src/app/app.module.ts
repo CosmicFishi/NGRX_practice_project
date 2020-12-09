@@ -17,7 +17,8 @@ import { ListEffect, WeatherEffect } from './app.effects';
 import { WeatherComponent } from './weather/weather.component';
 import { ListPersonComponent } from './list-person/list-person.component';
 import { ListReducer } from './app.reducer';
-import { ListCardComponent } from './list-card/list-card.component'
+import { ListCardComponent } from './list-card/list-card.component';
+import { GsapExampleComponent } from './gsap-example/gsap-example.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ListCardComponent } from './list-card/list-card.component'
     ScoreComponent,
     WeatherComponent,
     ListPersonComponent,
-    ListCardComponent
+    ListCardComponent,
+    GsapExampleComponent
   ],
   imports: [
     BrowserModule,

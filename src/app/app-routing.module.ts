@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { GsapExampleComponent } from './gsap-example/gsap-example.component';
 import { ListPersonComponent } from './list-person/list-person.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -9,7 +10,9 @@ const routes: Routes = [
   {path: '', component:LoginComponent }, 
   {path: 'profile', component: ProfileComponent},
   {path: 'weather', component: WeatherComponent}, 
-  {path: 'list', component: ListPersonComponent}
+  {path: 'list', component: ListPersonComponent}, 
+  {path: 'gsap-example', component: GsapExampleComponent}, 
+  {path: '**', component: LoginComponent}
 ];
 
 @NgModule({
