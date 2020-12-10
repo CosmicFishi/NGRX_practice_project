@@ -19,7 +19,8 @@ import { ListPersonComponent } from './list-person/list-person.component';
 import { infoReducer, ListReducer } from './app.reducer';
 import { ListCardComponent } from './list-card/list-card.component';
 import { GsapExampleComponent } from './gsap-example/gsap-example.component';
-import { CovidPanelComponent } from './covid-panel/covid-panel.component'
+import { CovidPanelComponent } from './covid-panel/covid-panel.component';
+import { ServiceWorkerModule } from '@angular/service-worker'
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { CovidPanelComponent } from './covid-panel/covid-panel.component'
       logOnly: environment.production,
     }),
     EffectsModule.forRoot([WeatherEffect, ListEffect, InfoEffect]),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
