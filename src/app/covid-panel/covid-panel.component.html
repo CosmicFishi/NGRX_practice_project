@@ -1,0 +1,14 @@
+<div class="container" *ngIf="this.info.info.name">
+    <h2>State: {{this.info.info.name}}</h2>
+    <p>{{this.info.current.lastUpdateEt}}</p>
+    <div class="info">
+        <h3>Total of positive: {{this.info.current.positive}}</h3>
+        <h3>Total of death: {{this.info.current.death}}</h3>
+        <h4>Hospitalized: {{this.info.current.hospitalized}}</h4>
+        <h4>Positive Increase: {{this.info.current.positiveIncrease}}</h4>
+        <p>
+            {{this.info.info.notes}}
+        </p>
+        <a target="_blank" href="{{this.info.info.covid19Site}}">Covid site</a>
+    </div>
+</div>

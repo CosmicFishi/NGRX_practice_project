@@ -24,3 +24,25 @@ export const getListSuccess = createAction(
 export const getListFailure = createAction( 
     '[List-person component] get list failed'
 )
+
+//covid info
+export const getCurrent = createAction(
+    '[Info component] get current'
+)
+export const getCurrentSuccess = createAction(
+    '[Info component] get current successful', 
+    props<{payload: {}}>()
+)
+export const getCurrentFailure = createAction(
+    '[Info component] get current failure'
+)
+export const getInfo = createAction(
+    '[Info component] get info'
+)
+export const getInfoSuccess = createAction(
+    '[Info component] get info successful',
+    props<{payload: {}}>()
+)
+export const getInfoFailure = createAction(
+    '[Info component] get info failure'
+)

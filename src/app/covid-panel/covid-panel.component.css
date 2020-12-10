@@ -1,0 +1,55 @@
+.container { 
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid white;
+}
+.container h2 {
+    margin: 10px;
+    font-size: 72px;
+    text-align: center;
+}
+.container p {
+    margin: 5px;
+    font-size: 18px;
+    text-align: center;
+}
+.info {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.info h3, .info h4 {
+    padding: 10px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: normal;
+}
+.info h3 {
+    width: 100vw;
+}
+.info h4 {
+    width: 50%;
+}
+.info a { 
+    color: white;
+    display: block;
+    font-size: 20px;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s ease-in-out;
+    position: relative;
+}
+.info a::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 0%;
+    bottom: -1px;
+    position: absolute;
+    background-color: white;
+    transition: 0.5s ease-in-out;
+} 
+.info a:hover::after {
+    width: 100%
+}

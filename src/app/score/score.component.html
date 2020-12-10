@@ -1,12 +1,12 @@
-<div>
+<div class="container">
     <h2>score</h2>
-    <div>
+    <div class="score">
         <p>home score: {{score.home}} </p>
         <p>away score: {{score.away}} </p>
     </div>
-    <div>
-        <button (click)="onIncrease()">+</button>
-        <button (click)="onDecrease()">-</button>
-        <button (click)="onReset()" >reset</button>
+    <div class="button">
+        <button (click)="onIncrease()">Home</button>
+        <button (click)="onDecrease()">Away</button>
+        <button (click)="onReset()" >Reset</button>
     </div>
 </div>

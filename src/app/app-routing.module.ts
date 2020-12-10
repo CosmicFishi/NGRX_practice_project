@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CovidPanelComponent } from './covid-panel/covid-panel.component';
 import { GsapExampleComponent } from './gsap-example/gsap-example.component';
 import { ListPersonComponent } from './list-person/list-person.component';
 import { LoginComponent } from './login/login.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'weather', component: WeatherComponent}, 
   {path: 'list', component: ListPersonComponent}, 
   {path: 'gsap-example', component: GsapExampleComponent}, 
+  {path: 'covid', component: CovidPanelComponent},
   {path: '**', component: LoginComponent}
 ];
 
