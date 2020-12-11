@@ -20,8 +20,9 @@ import { CovidPanelComponent } from './covid-panel/covid-panel.component';
 import { ServiceWorkerModule } from '@angular/service-worker'
 
 import { reducer, ScoreReducer, weatherReducer } from './login.reducer'
-import { infoReducer, ListReducer } from './app.reducer';
-import { InfoEffect, ListEffect, WeatherEffect } from './app.effects';
+import { infoReducer, ListReducer, NewsReducer } from './app.reducer';
+import { InfoEffect, ListEffect, NewsEffects, WeatherEffect } from './app.effects';
+import { NewsModule } from './news/news.module';
 
 @NgModule({
   declarations: [
@@ -33,20 +34,21 @@ import { InfoEffect, ListEffect, WeatherEffect } from './app.effects';
     ListPersonComponent,
     ListCardComponent,
     GsapExampleComponent,
-    CovidPanelComponent
+    CovidPanelComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule, 
     BrowserAnimationsModule,
-    StoreModule.forRoot({name: reducer, score: ScoreReducer, weather: weatherReducer, list: ListReducer, info: infoReducer}),
+    StoreModule.forRoot({name: reducer, score: ScoreReducer, weather: weatherReducer, list: ListReducer, info: infoReducer, news: NewsReducer}),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production,
     }),
-    EffectsModule.forRoot([WeatherEffect, ListEffect, InfoEffect]),
+    EffectsModule.forRoot([WeatherEffect, ListEffect, InfoEffect, NewsEffects]),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    NewsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

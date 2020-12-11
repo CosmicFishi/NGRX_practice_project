@@ -1,5 +1,6 @@
+//list
 import { createReducer, on, Action } from '@ngrx/store'
-import { getListSuccess, getListFailure, getCurrentFailure, getCurrentSuccess, getInfoSuccess, getInfoFailure } from './app.actions'
+import { getListSuccess, getListFailure, getCurrentFailure, getCurrentSuccess, getInfoSuccess, getInfoFailure, getNewsSuccess, getNewsFailure } from './app.actions'
 
 export const initList = { 
     payload: [], 
@@ -12,6 +13,7 @@ export const _ListReducer = createReducer(
     on(getListFailure, (state) => ({...state,msg:'failed to get list'}))
 )
 
+//Info
 export function ListReducer(state , action:Action) { 
     return _ListReducer(state, action)
 }
@@ -32,4 +34,18 @@ export const _infoReducer = createReducer(
 )
 export function infoReducer(state, action: Action) {
     return _infoReducer(state, action)
+}
+
+//News
+export const initNews = {
+    news: {},
+    msg: ''
+}
+export const _NewsReducer = createReducer(
+    initNews, 
+    on(getNewsSuccess, (state,{payload}) => ({...state, news: payload})),
+    on(getNewsFailure, (state,) => ({...state, msg: 'failed to get news'})),
+)
+export function NewsReducer(state, action: Action) { 
+    return _NewsReducer(state, action);
 }

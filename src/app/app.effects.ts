@@ -2,11 +2,12 @@ import { Injectable } from "@angular/core";
 import { createEffect, Actions, ofType } from '@ngrx/effects';
 import { WeatherService } from './weather.service';
 import { mergeMap, map, catchError } from 'rxjs/operators'
-import { loadlWeatherSuccess, getListSuccess, getCurrentSuccess, getInfoSuccess } from './app.actions'
+import { loadlWeatherSuccess, getListSuccess, getCurrentSuccess, getInfoSuccess, getNewsSuccess } from './app.actions'
 import { of } from 'rxjs';
 import { state } from '@angular/animations';
 import { ListService } from './list.service';
-import { InfoService } from './info.service'
+import { InfoService } from './info.service';
+import { NewsService } from './news.service'
 
 
 @Injectable()
@@ -64,6 +65,22 @@ export class InfoEffect {
         mergeMap(() => this.infoService.getInfo().pipe(
             map(data => getInfoSuccess({...state, payload: data})),
             catchError(() => of({type: '[Info component] get info failure'}))
+        ))
+    ))
+}
+
+@Injectable() 
+export class NewsEffects {
+    constructor(
+        private action: Actions,
+        private newsService: NewsService
+    ) {}
+
+    loadNews = createEffect( () => this.action.pipe(
+        ofType('[News component] get news'),
+        mergeMap( () => this.newsService.getNews().pipe(
+            map(data => getNewsSuccess({...state, payload: data})), 
+            catchError( () => of({type: '[News component] get news failure'}))
         ))
     ))
 }

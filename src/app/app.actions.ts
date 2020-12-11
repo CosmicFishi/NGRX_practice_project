@@ -46,3 +46,15 @@ export const getInfoSuccess = createAction(
 export const getInfoFailure = createAction(
     '[Info component] get info failure'
 )
+
+//news 
+export const getNews = createAction(
+    '[News component] get news'
+)
+export const getNewsSuccess = createAction(
+    '[News component] get news successful', 
+    props<{payload: {}}>()
+)
+export const getNewsFailure = createAction(
+    '[News component] get news failure'
+)

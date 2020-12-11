@@ -28,8 +28,8 @@ export const initScore = {
 
 const scoreReducer = createReducer( 
     initScore, 
-    on(increaseScore, state => ({...state, away: state.away+1})), 
-    on(decreaseScore, state => ({...state, home: state.home+1})), 
+    on(increaseScore, state => ({...state, home: state.home+1})), 
+    on(decreaseScore, state => ({...state, away: state.away+1})), 
     on(setScore, state => ({home:0,away:0}))
 )
 

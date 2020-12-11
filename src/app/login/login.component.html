@@ -1,9 +1,10 @@
 <div class="url">
-    <p i18n="Hello world navigation item|Navigation to hello world page@@Nav-item-hello-world"><a [routerLink]='"\profile"'>Hello world</a></p>
-    <p i18n="Weather navigation item|Navigation to weather page@@Nav-item-wather"><a [routerLink]='"\weather"'>Weather</a></p>
-    <p i18n="List navigation item|Navigation to list page@@Nav-item-list"><a [routerLink]='"\list"'>List</a></p>
-    <p i18n="Gsap example navigation item|Navigation to gsap page@@Nav-item-gsap-example"><a [routerLink]='"\gsap-example"'>Gsap-example</a></p>
-    <p i18n="Covid navigation item|Navigation to covid page@@Nav-item-covid"><a [routerLink]='"\covid"'>Covid</a></p>
+    <p i18n="Hello world navigation item|Navigation to hello world page@@Nav-item-hello-world"><a [routerLink]='"/profile"'>Hello world</a></p>
+    <p i18n="Weather navigation item|Navigation to weather page@@Nav-item-wather"><a [routerLink]='"/weather"'>Weather</a></p>
+    <p i18n="List navigation item|Navigation to list page@@Nav-item-list"><a [routerLink]='"/list"'>List</a></p>
+    <p i18n="Gsap example navigation item|Navigation to gsap page@@Nav-item-gsap-example"><a [routerLink]='"/gsap-example"'>Gsap-example</a></p>
+    <p i18n="Covid navigation item|Navigation to covid page@@Nav-item-covid"><a [routerLink]='"/covid"'>Covid</a></p>
+    <p><a [routerLink]='"/news"'>News</a></p>
 </div>
 <div class="input">
     <input #name type="text" placeholder="Nhập tên ..." name="username" />
@@ -11,6 +12,5 @@
     <input type="button" value="Logout" (click)="onClick('')" />
     <h1>{{ username.username }}</h1>
 </div>
-
 
 <app-score></app-score>
