@@ -1,0 +1,35 @@
+.article {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 1rem 10vw;
+}
+a {
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+}
+a:hover{ 
+    color: black;
+}
+h1 {
+    font-size: 32px;
+    padding-bottom: 1rem;
+}
+.image { 
+    justify-self: center;
+    position: relative;
+    width: 30%;
+}
+.image img { 
+    width: 100%;
+
+}
+.info { 
+    line-height: 1.5;
+    position: relative;
+    width: 70%;
+}
+.info div {
+    padding: 1rem;
+}
+

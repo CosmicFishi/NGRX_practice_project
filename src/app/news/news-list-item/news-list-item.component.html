@@ -1,1 +1,19 @@
-<p>news-list-item works!</p>
+<div class="article" >
+    <div class="image" *ngIf="this.infoObject.urlToImage">
+        <img src={{this.infoObject.urlToImage}} />
+    </div>
+    <div *ngIf="!this.infoObject.urlToImage" class="image">
+        <img src="https://cdn.dribbble.com/users/126249/screenshots/3103925/empty.jpg?compress=1&resize=400x300" />
+    </div>
+    <div class="info">
+        <div>
+            <h1>
+                <a target="_blank" href={{this.infoObject.url}}>{{this.infoObject.title}}</a>
+            </h1>
+            <h3>{{this.infoObject.description}}</h3>
+            <small>{{this.infoObject.author}}</small>
+            <br>
+            <small>{{this.infoObject.publishedAt}}</small>    
+        </div>
+    </div>
+</div>

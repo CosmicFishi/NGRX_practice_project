@@ -8,14 +8,16 @@ import { Store } from '@ngrx/store';
 })
 export class NewsListComponent implements OnInit {
 
-  news: {}
+  news
   constructor(
-    private store: Store,  
+    private store: Store<{news:{}}>,  
   ) { }
 
   ngOnInit(): void {
-    this.store.dispatch({type: '[News component] get news'})
-    // if
+    this.store.select('news').subscribe(res => this.news = res)
+    if(Object.entries(this.news.news).length == 0) {
+      this.store.dispatch({type: '[News component] get news'})
+    }
   }
 
 }
